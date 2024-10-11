@@ -1,0 +1,52 @@
+/* portfolio_styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent),
+                linear-gradient(66deg,#242627, #161718); /* Dark grey to darker blue gradient */
+    color: #ecf0f1; /* Light grey for text */
+    overflow: hidden;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Scrolling wrapper that contains the moving text */
+.scrolling-wrapper {
+    width: 100%;  /* Full width of the screen */
+    overflow: hidden; /* Hide the overflow so the text only appears inside this container */
+    position: relative;
+}
+
+/* Scrolling text container */
+.scrolling-text {
+    display: flex;
+    white-space: nowrap; /* Prevent text from wrapping */
+    animation: scrollText 3s linear infinite; /* Continuous scroll */
+}
+
+.scrolling-text span {
+    font-size: 6vw; /* Adjust font size relative to viewport width */
+    font-weight: bold;
+    color: #d7dbdc;
+    padding-right: 2vw;
+}
+
+/* Keyframes for continuous, seamless scroll */
+@keyframes scrollText {
+    0% {
+        transform: translateX(-3.9467%); /* Start at the original position */
+    }
+    100% {
+        transform: translateX(-100%); /* Move completely off-screen to the left */
+    }
+}
