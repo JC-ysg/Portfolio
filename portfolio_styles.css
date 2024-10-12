@@ -7,46 +7,57 @@ body {
     background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent),
                 linear-gradient(66deg,#242627, #161718); /* Dark grey to darker blue gradient */
     color: #ecf0f1; /* Light grey for text */
-    overflow: hidden;
 }
 
-.content {
+/* Style for the container of the scrolling text */
+.marquee-section {
+    position: relative;
     display: flex;
+    flex-direction: column; /* Stack lines vertically */
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh; /* Full viewport height to center it vertically */
+    overflow: hidden; /* Hide the overflowing text */
+}
+
+/* Style for the scrolling text */
+.marquee {
+    white-space: nowrap; /* Prevent text wrapping */
+    font-size: 8vw; /* Set the text to a larger size */
+    font-weight: bold; /* Make the text bold */
+    color: #8d8ba929; /* Light color for better visibility */
+}
+
+/* Container for scrolling the text */
+.marquee-div.marquee-left {
+    position: absolute;
+    top: 38%;
     width: 100%;
-    overflow: hidden;
-    position: relative;
+    animation: move-right-to-left linear 30s infinite; /* Controls scrolling speed and looping */
 }
 
-/* Scrolling wrapper that contains the moving text */
-.scrolling-wrapper {
-    width: 100%;  /* Full width of the screen */
-    overflow: hidden; /* Hide the overflow so the text only appears inside this container */
-    position: relative;
+.marquee-div.marquee-right {
+    position: absolute;
+    top: 54%;
+    width: 100%;
+    animation: move-left-to-right linear 30s infinite; /* Left to Right scrolling */
 }
 
-/* Scrolling text container */
-.scrolling-text {
-    display: flex;
-    white-space: nowrap; /* Prevent text from wrapping */
-    animation: scrollText 3s linear infinite; /* Continuous scroll */
-}
-
-.scrolling-text span {
-    font-size: 6vw; /* Adjust font size relative to viewport width */
-    font-weight: bold;
-    color: #d7dbdc;
-    padding-right: 2vw;
-}
-
-/* Keyframes for continuous, seamless scroll */
-@keyframes scrollText {
-    0% {
-        transform: translateX(-3.9467%); /* Start at the original position */
+/* Keyframes to move text from right to left */
+@keyframes move-right-to-left {
+    from {
+        transform: translateX(0); /* Start from original position */
     }
-    100% {
-        transform: translateX(-100%); /* Move completely off-screen to the left */
+    to {
+        transform: translateX(-800%); /* Move halfway across the text */
+    }
+}
+
+@keyframes move-left-to-right {
+    from {
+        transform: translateX(-1000%); /* Start from original position */
+    }
+    to {
+        transform: translateX(0%); /* Move halfway across the text */
     }
 }
