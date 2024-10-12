@@ -1,63 +1,56 @@
-/* portfolio_styles.css */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     height: 100vh;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent),
-                linear-gradient(66deg,#242627, #161718); /* Dark grey to darker blue gradient */
-    color: #ecf0f1; /* Light grey for text */
+    background: rgb(25, 20, 20); /* Original gradient */
+    color: #a9d6e1; /* Original text color */
 }
 
-/* Style for the container of the scrolling text */
+canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+  }
+
 .marquee-section {
-    position: relative;
+    position: absolute;
     display: flex;
-    flex-direction: column; /* Stack lines vertically */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height to center it vertically */
-    overflow: hidden; /* Hide the overflowing text */
+    height: 100vh;
+    width: 100%;
 }
 
-/* Style for the scrolling text */
 .marquee {
-    white-space: nowrap; /* Prevent text wrapping */
-    font-size: 8vw; /* Set the text to a larger size */
-    font-weight: bold; /* Make the text bold */
-    color: #8d8ba929; /* Light color for better visibility */
+    white-space: nowrap;
+    font-size: 8vw;
+    font-weight: bold;
+    color: #939393ba; /* Original text color */
 }
 
-/* Container for scrolling the text */
 .marquee-div.marquee-left {
     position: absolute;
-    top: 38%;
+    top: 32%;
     width: 100%;
-    animation: move-right-to-left linear 30s infinite; /* Controls scrolling speed and looping */
+    animation: move-right-to-left linear 30s infinite;
 }
 
 .marquee-div.marquee-right {
     position: absolute;
-    top: 54%;
+    top: 48%;
     width: 100%;
-    animation: move-left-to-right linear 30s infinite; /* Left to Right scrolling */
+    animation: move-left-to-right linear 30s infinite;
 }
 
-/* Keyframes to move text from right to left */
 @keyframes move-right-to-left {
-    from {
-        transform: translateX(0); /* Start from original position */
-    }
-    to {
-        transform: translateX(-800%); /* Move halfway across the text */
-    }
+    from { transform: translateX(0); }
+    to { transform: translateX(-800%); }
 }
 
 @keyframes move-left-to-right {
-    from {
-        transform: translateX(-1000%); /* Start from original position */
-    }
-    to {
-        transform: translateX(0%); /* Move halfway across the text */
-    }
+    from { transform: translateX(-1000%); }
+    to { transform: translateX(0); }
 }
+
