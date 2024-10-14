@@ -17,11 +17,17 @@ html {
 
 @font-face {
     font-family: 'BadMofo';
-    src: url('fonts/bad-mofo/Bad Mofo/BadMofo.ttf') format('woff'); /* Adjust path if needed */
+    src: url('fonts/BadMofo.ttf') format('woff'); /* Adjust path if needed */
     font-weight: normal;
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Minecraft';
+    src: url('fonts/Minecraft.ttf') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
 
 canvas {
     display: block;
@@ -41,32 +47,58 @@ canvas {
 
 .marquee {
     white-space: nowrap;
-    font-size: 8vw;
     font-weight: bold;
-    color: #b1afafa8; /* Original text color */
+    font-family: 'BadMofo'; /* Use the new font */
 }
+
 
 .marquee-div.marquee-left {
     position: absolute;
-    top: 32%;
+    top: 30%;
     width: 100%;
+    font-size: 11vw;
     animation: move-right-to-left linear 30s infinite;
+}
+
+.marquee-link {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: #000008; /* Original text color */
+}
+
+/* Pause the marquee animation on hover */
+.marquee-div:hover {
+    animation-play-state: paused;
 }
 
 .marquee-div.marquee-right {
     position: absolute;
-    top: 48%;
+    top: 51%;
     width: 100%;
+    font-size: 2vw;
+    color: #4a4a4adc; /* Original text color */
     animation: move-left-to-right linear 30s infinite;
 }
 
 @keyframes move-right-to-left {
     from { transform: translateX(0); }
-    to { transform: translateX(-800%); }
+    to { transform: translateX(-500%); }
 }
 
 @keyframes move-left-to-right {
-    from { transform: translateX(-1800%); }
+    from { transform: translateX(-1000%); }
     to { transform: translateX(0); }
+}
+
+.bottom-center-text {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.6vw;
+    color: #9d9ba3; /* Match existing text color */
+    font-weight: bold;
+    font-family: 'Minecraft', Arial, sans-serif; /* Use the new font */
 }
 
