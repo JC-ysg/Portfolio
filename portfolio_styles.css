@@ -1,11 +1,27 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'BadMofo', Arial, sans-serif;
     height: 100vh;
-    background: rgb(25, 20, 20); /* Original gradient */
+    background: rgba(107, 106, 106, 0.384); /* Original gradient */
     color: #a9d6e1; /* Original text color */
 }
+
+html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+@font-face {
+    font-family: 'BadMofo';
+    src: url('fonts/bad-mofo/Bad Mofo/BadMofo.ttf') format('woff'); /* Adjust path if needed */
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 canvas {
     display: block;
@@ -27,7 +43,7 @@ canvas {
     white-space: nowrap;
     font-size: 8vw;
     font-weight: bold;
-    color: #939393ba; /* Original text color */
+    color: #b1afafa8; /* Original text color */
 }
 
 .marquee-div.marquee-left {
@@ -50,7 +66,7 @@ canvas {
 }
 
 @keyframes move-left-to-right {
-    from { transform: translateX(-1000%); }
+    from { transform: translateX(-1800%); }
     to { transform: translateX(0); }
 }
 
