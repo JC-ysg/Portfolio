@@ -17,14 +17,14 @@ html {
 
 @font-face {
     font-family: 'BadMofo';
-    src: url('fonts/BadMofo.ttf') format('woff'); /* Adjust path if needed */
-    font-weight: normal;
+    src: url('fonts/BadMofo.ttf') format('truetype'); /* Adjust path if needed */
+    font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Minecraft';
-    src: url('fonts/Minecraft.ttf') format('woff');
+    src: url('fonts/Minecraft.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
@@ -102,3 +102,15 @@ canvas {
     font-family: 'Minecraft', Arial, sans-serif; /* Use the new font */
 }
 
+/* Style the image container for absolute positioning */
+.image-container {
+    position: absolute;
+    top: 6%; /* Position the image just above the bottom-center-text */
+    left: 4%;
+}
+
+/* Style the image itself */
+.custom-image {
+    width: 150px;   /* Adjust the size as needed */
+    height: auto;   /* Maintain aspect ratio */
+}
